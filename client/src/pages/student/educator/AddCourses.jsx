@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import uniqid from "uniqid";
 import Quill from "quill";
 import { assets } from "@/assets/assets";
-import { checkPrime } from "crypto";
+
 
 const AddCourses = () => {
   const quillRef = useRef(null);
