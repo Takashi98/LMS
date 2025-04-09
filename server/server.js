@@ -3,6 +3,7 @@ import cors from 'cors'
 import 'dotenv/config'
 import {connectDB} from './configs/mongodb.js';
 import { clerkWebhooks } from './controllers/webhooks.js';
+import bodyParser from 'body-parser';
 
 // express
 
@@ -20,7 +21,8 @@ app.use(cors())
 
 app.get('/', (req, res) => res.send('api is working'));
 
-app.post('/clerk', express.json(), clerkWebhooks)
+app.post('/clerk', bodyParser.raw({ type: '*/*' }), clerkWebhooks);
+
 
 // Port
 
